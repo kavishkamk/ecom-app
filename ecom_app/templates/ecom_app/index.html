@@ -15,10 +15,8 @@
     {% include "./includes/header.html" %}
 
     <div class="category-container" >
-        {% include "./includes/category-item.html" %}
-        {% include "./includes/category-item.html" %}
-        {% include "./includes/category-item.html" %}
-        {% include "./includes/category-item.html" %}
-        {% include "./includes/category-item.html" %}
+        {% for category in categories %}
+            {% include "./includes/category-item.html" %}
+        {% endfor %}
     </div>
 {% endblock %}

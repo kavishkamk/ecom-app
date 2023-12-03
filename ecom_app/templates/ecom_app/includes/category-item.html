@@ -1,8 +1,8 @@
-<div class="category-item-container" onclick="window.location.href='{% url 'categoy-page' 'gh' %}'">
-    <div class="background-image" style="background-image: url('https://i.ibb.co/cvpntL1/hats.png');">
+<div class="category-item-container" onclick="window.location.href='{% url 'categoy-page' category.title %}'">
+    <div class="background-image" style="background-image: url('{{category.imageUrl}}');">
     </div>
     <div class="body">
-        <h2 class="catetory-item-title" >title</h2>
+        <h2 class="catetory-item-title" >{{ category.title }}</h2>
         <p class="category-item-content">Shop Now</p>
     </div>
 </div>
