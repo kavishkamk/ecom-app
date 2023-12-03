@@ -2,7 +2,8 @@
 {% load static %}
 
 {% block stylesheets %}
-    <link rel="stylesheet" href="{% static '../../static/ecom_app/css/index.css' %}">
+    <link rel="stylesheet" href="{% static 'ecom_app/css/includes/header.css' %}">
+    <link rel="stylesheet" href="{% static 'ecom_app/css/index.css' %}">
 {% endblock %}
 
 {% block title %}
@@ -13,5 +14,11 @@
     
     {% include "./includes/header.html" %}
 
-    <h1>Home</h1>
+    <div class="category-container" >
+        {% include "./includes/category-item.html" %}
+        {% include "./includes/category-item.html" %}
+        {% include "./includes/category-item.html" %}
+        {% include "./includes/category-item.html" %}
+        {% include "./includes/category-item.html" %}
+    </div>
 {% endblock %}

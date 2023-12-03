@@ -1,0 +1,55 @@
+.base-button {
+    min-width: 165px;
+    width: auto;
+    height: 50px;
+    letter-spacing: 0.5px;
+    line-height: 50px;
+    padding: 0 35px;
+    font-size: 12px;
+    background-color: black;
+    color: white;
+    text-transform: uppercase;
+    font-family: 'Open Sans Condensed';
+    font-weight: bolder;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.base-button:hover {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+}
+
+/* Styles for GoogleSignInButton (extends base-button) */
+.google-sign-in-button {
+    background-color: #4285f4;
+    color: white;
+}
+
+.google-sign-in-button:hover {
+    background-color: #357ae8;
+    border: none;
+}
+
+/* Styles for invertedButton (extends base-button) */
+.inverted-button {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+}
+
+.inverted-button:hover {
+    background-color: black;
+    color: white;
+    border: none;
+}
+
+/* Styles for ButtonSpinner */
+.button-spinner {
+    width: 30px;
+    height: 30px;
+}

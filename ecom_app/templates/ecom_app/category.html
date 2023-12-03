@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{% static 'ecom_app/css/includes/header.css' %}">
+    <link rel="stylesheet" href="{% static 'ecom_app/css/includes/button.css' %}">
+    <link rel="stylesheet" href="{% static 'ecom_app/css/includes/item-card.css' %}">
+    <link rel="stylesheet" href="{% static 'ecom_app/css/category.css' %}">
+{% endblock %}
+
+{% block title %}
+    <title>Catetory</title>
+{% endblock %}
+
+{% block content %}
+    
+    {% include "./includes/header.html" %}
+    <h2 class="category-page-title">Test category</h2>
+    <div class="category-page-container">
+        {% include "./includes/item-card.html" %}
+        {% include "./includes/item-card.html" %}
+        {% include "./includes/item-card.html" %}
+        {% include "./includes/item-card.html" %}
+        {% include "./includes/item-card.html" %}
+        {% include "./includes/item-card.html" %}
+        {% include "./includes/item-card.html" %}
+        {% include "./includes/item-card.html" %}
+    </div>
+
+    
+{% endblock %}

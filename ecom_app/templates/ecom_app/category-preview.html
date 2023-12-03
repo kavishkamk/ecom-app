@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{% static 'ecom_app/css/includes/header.css' %}">
+    <link rel="stylesheet" href="{% static 'ecom_app/css/includes/button.css' %}">
+    <link rel="stylesheet" href="{% static 'ecom_app/css/includes/item-card.css' %}">
+    <link rel="stylesheet" href="{% static 'ecom_app/css/includes/category-preview-section.css' %}">
+    <link rel="stylesheet" href="{% static 'ecom_app/css/category-preview.css' %}">
+{% endblock %}
+
+{% block title %}
+    <title>Catetory Preview</title>
+{% endblock %}
+
+{% block content %}
+    
+    {% include "./includes/header.html" %}
+    
+    {% include "./includes/category-preview-section.html" %}
+    {% include "./includes/category-preview-section.html" %}
+    {% include "./includes/category-preview-section.html" %}
+    {% include "./includes/category-preview-section.html" %}
+    
+{% endblock %}
