@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{% static '../../static/ecom_app/css/index.css' %}">
+{% endblock %}
+
+{% block title %}
+    <title>Home</title>
+{% endblock %}
+
+{% block content %}
+    
+    {% include "./includes/header.html" %}
+
+    <h1>Home</h1>
+{% endblock %}
