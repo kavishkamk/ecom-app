@@ -1,45 +1,26 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 
-categories = [
-    {
-        "id": 1,
-        "title": "hats",
-        "imageUrl": "https://i.ibb.co/cvpntL1/hats.png",
-        "route": "shop/hats"
-    },
-    {
-        "id": 2,
-        "title": "jackets",
-        "imageUrl": "https://i.ibb.co/px2tCc3/jackets.png",
-        "route": "shop/jackets"
-    },
-    {
-        "id": 3,
-        "title": "sneakers",
-        "imageUrl": "https://i.ibb.co/0jqHpnp/sneakers.png",
-        "route": "shop/sneakers"
-    },
-    {
-        "id": 4,
-        "title": "womens",
-        "imageUrl": "https://i.ibb.co/GCCdy8t/womens.png",
-        "route": "shop/womens"
-    },
-    {
-        "id": 5,
-        "title": "mens",
-        "imageUrl": "https://i.ibb.co/R70vBrQ/men.png",
-        "route": "shop/mens"
-    }
-]
+from .models import Category
 
 def index(request):
+
+    categories = Category.objects.all()
+
     return render(request, "ecom_app/index.html", {
         "categories": categories
     })
 
 def catetory(request, category_id):
-    return render(request, "ecom_app/category.html")
+
+    category = get_object_or_404(Category, route=category_id)
+    
+    return render(request, "ecom_app/category.html", {
+        "category": category
+    })
 
 def category_preview(request):
-    return render(request, "ecom_app/category-preview.html")
+    categories = Category.objects.all()
+
+    return render(request, "ecom_app/category-preview.html", {
+        "categories": categories
+    })

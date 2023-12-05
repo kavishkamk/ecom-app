@@ -17,9 +17,8 @@
     
     {% include "./includes/header.html" %}
     
-    {% include "./includes/category-preview-section.html" %}
-    {% include "./includes/category-preview-section.html" %}
-    {% include "./includes/category-preview-section.html" %}
-    {% include "./includes/category-preview-section.html" %}
+    {% for category in categories %}
+        {% include "./includes/category-preview-section.html" %}
+    {% endfor %}
     
 {% endblock %}

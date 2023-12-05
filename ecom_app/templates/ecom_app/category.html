@@ -15,7 +15,7 @@
 {% block content %}
     
     {% include "./includes/header.html" %}
-    <h2 class="category-page-title">Test category</h2>
+    <h2 class="category-page-title">{{category.title | upper}}</h2>
     <div class="category-page-container">
         {% include "./includes/item-card.html" %}
         {% include "./includes/item-card.html" %}
