@@ -10,17 +10,29 @@ def index(request):
         "categories": categories
     })
 
-def catetory(request, category_id):
+def catetory(request, slug):
 
-    category = get_object_or_404(Category, route=category_id)
+    category = get_object_or_404(Category, slug=slug)
+    category_items = category.items.all()
     
     return render(request, "ecom_app/category.html", {
-        "category": category
+        "category": category,
+        "category_items": category_items
     })
 
 def category_preview(request):
     categories = Category.objects.all()
+    categories_preview = []
+
+    for category in categories:
+        categories_preview.append(
+            {
+                "category": category,
+                "category_items": category.items.all()[:4]
+            }
+        )
+
 
     return render(request, "ecom_app/category-preview.html", {
-        "categories": categories
+        "categories_preview": categories_preview
     })

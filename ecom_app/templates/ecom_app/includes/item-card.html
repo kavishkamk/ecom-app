@@ -1,8 +1,8 @@
 <div class="product-card-container">
-    <img src="https://i.ibb.co/ZYW3VTp/brown-brim.png" alt="Product Name Here" />
+    <img src="{{ category_item.imageUrl }}" alt="Product Name Here" />
     <div class="footer">
-        <span class="name">Product Name</span>
-        <span class="price">333</span>
+        <span class="name">{{ category_item.name }}</span>
+        <span class="price">{{ category_item.price }}</span>
     </div>
     <button class="base-button inverted-button google-sign-in-button">Add to cart</button>
 </div>

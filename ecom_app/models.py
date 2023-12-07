@@ -1,19 +1,24 @@
+from collections.abc import Iterable
 from django.db import models
 from django.urls import reverse
+from django.utils.text import slugify
 
 # Create your models here.
 
 class Category(models.Model):
     title = models.CharField(max_length=100)
     imageUrl = models.URLField()
-    route = models.CharField(max_length=100)
+    slug = models.SlugField(default="", null=False)
 
     def __str__(self):
-        return f"title: {self.title}, id: {self.id}, route: {self.route}"
+        return f"title: {self.title}, id: {self.id}, slug: {self.slug}"
     
     def get_absolute_url(self):
-        return reverse("categoy-page", args=[self.route])
+        return reverse("categoy-page", args=[self.slug])
     
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.title)
+        super().save(*args, **kwargs)
 
 class CategoryItem(models.Model):
     imageUrl = models.URLField()

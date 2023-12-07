@@ -1,11 +1,10 @@
 <div class="category-preview-container">
     <h2>
-        <a class="category-preview-link" href=""/>{{category.title | upper}}</a>
+        <a class="category-preview-link" href=""/>{{category.category.title | upper}}</a>
     </h2>
     <div class="category-preview-section-container">
-        {% include "./item-card.html" %}
-        {% include "./item-card.html" %}
-        {% include "./item-card.html" %}
-        {% include "./item-card.html" %}
+        {% for category_item in category.category_items %}
+            {% include "./item-card.html" %}
+        {% endfor %}
     </div>
 </div>
