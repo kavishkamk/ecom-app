@@ -8,7 +8,7 @@ from django.utils.text import slugify
 class Category(models.Model):
     title = models.CharField(max_length=100)
     imageUrl = models.URLField()
-    slug = models.SlugField(default="", null=False)
+    slug = models.SlugField(default="", null=False, unique=True, db_index=True)
 
     def __str__(self):
         return f"title: {self.title}, id: {self.id}, slug: {self.slug}"
@@ -28,3 +28,11 @@ class CategoryItem(models.Model):
 
     def __str__(self):
         return f"name: {self.name}, id: {self.id}, category: {self.category.title}"
+    
+class User(models.Model):
+    username = models.CharField(max_length=100)
+    email = models.EmailField()
+    password = models.CharField(max_length=100)
+
+    def __str__(self):
+        return f"username: {self.username}, email: {self.email}, id: {self.id}"

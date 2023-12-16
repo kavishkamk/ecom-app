@@ -1,6 +1,10 @@
 from django.shortcuts import render, get_object_or_404
+from django.http import HttpResponse
 
 from .models import Category
+from .models import User
+
+from .forms import SignUpForm
 
 def index(request):
 
@@ -35,4 +39,24 @@ def category_preview(request):
 
     return render(request, "ecom_app/category-preview.html", {
         "categories_preview": categories_preview
+    })
+
+def authentication(request):
+
+    if request.method == "POST":
+        form = SignUpForm(request.POST)
+
+        if form.is_valid():
+            user = User(
+                username=form.cleaned_data["username"],
+                email=form.cleaned_data["email"],
+                password=form.cleaned_data["password"]
+            )
+            user.save()
+            return HttpResponse("User Created")
+    else:
+        form = SignUpForm()
+
+    return render(request, "ecom_app/authentication.html", {
+        "form": form
     })

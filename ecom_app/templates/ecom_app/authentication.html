@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{% static 'ecom_app/css/includes/header.css' %}">
+    <link rel="stylesheet" href="{% static 'ecom_app/css/includes/button.css' %}">
+    <link rel="stylesheet" href="{% static 'ecom_app/css/includes/form-input.css' %}">
+    <link rel="stylesheet" href="{% static 'ecom_app/css/includes/sign-up-form.css' %}">
+    <link rel="stylesheet" href="{% static 'ecom_app/css/authentication.css' %}">
+{% endblock %}
+
+{% block title %}
+    <title>Login</title>
+{% endblock %}
+
+{% block content %}
+    
+    {% include "./includes/header.html" %}
+    
+    <div class="auth-container">
+        {% include "./includes/sign-up-form.html" %}
+    </div>
+    
+{% endblock %}
